@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int CreateClientSocket(int socket);
+int CreateClientSocket(int domain, int type, int protocol);
 int ConnectToServer(int socket, struct sockaddr address);
 
 #endif
