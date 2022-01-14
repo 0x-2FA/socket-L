@@ -10,9 +10,8 @@ int CreateClientSocket(int domain, int type, int protocol)
   return sckt;
 }
 
-int ConnectToServer(int socket, struct sockaddr address)
+int ConnectToServer(int socktfd, const struct sockaddr *address, int length)
 {
-  
+  int con = connect(socktfd, address, length);
+  return con;
 }
-
-
