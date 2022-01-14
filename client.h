@@ -3,10 +3,9 @@
 
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <sys/un.h>
 
 int CreateClientSocket(int domain, int type, int protocol);
-int ConnectToServer(int socket, struct sockaddr address);
+int ConnectToServer(int socktfd, struct sockaddr *address, int length);
 
 #endif
