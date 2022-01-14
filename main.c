@@ -23,7 +23,13 @@ int main(void)
     printf("Error: Client 1!\n");
     return -1;
   }
-  
 
+  write(socketfd, &num, sizeof(num));
+  read(socketfd, &num, sizeof(num));
+
+  printf("From server got: %d\n", num);
+
+  close(socketfd);
+  
   return 0;
 }
