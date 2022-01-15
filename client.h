@@ -7,6 +7,6 @@
 
 int CreateClientSocket(int domain, int type, int protocol);
 int ConnectToServer(int socktfd, const struct sockaddr *address, int length);
-int TestConnection(const int *con);
+
 
 #endif
