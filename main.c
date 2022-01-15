@@ -18,9 +18,9 @@ int main(void)
 
   int con = ConnectToServer(socketfd, (struct sockaddr*) &address, sizeof(address));
 
-  if (con == -1) 
+  if(TestConnection(&con) == -1) 
   {
-    printf("Error: Client 1!\n");
+    CloseConnection(&socketfd);
     return -1;
   }
 
@@ -29,7 +29,7 @@ int main(void)
 
   printf("From server got: %d\n", num);
 
-  close(socketfd);
+  CloseConnection(&socketfd);
   
   return 0;
 }
