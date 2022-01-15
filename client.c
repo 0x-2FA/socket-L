@@ -1,6 +1,8 @@
 #include "client.h"
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <sys/un.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,4 +25,10 @@ int TestConnection(const int *con)
     printf("Error: Client...\n");
     return -1;
   }
+}
+
+void CloseConnection(const int *socktfd)
+{
+  printf("Terminating Connection...\n");
+  close(*socktfd);
 }
