@@ -6,6 +6,7 @@
 #include <sys/un.h>
 
 int CreateServerSocket(int domain, int type, int protocol);
+void NameTheSocket(struct sockaddr_un server_address);
 void RemoveSockets(const char *socket_name);
 void Listen();
 
