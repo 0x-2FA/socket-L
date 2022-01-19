@@ -10,6 +10,13 @@ int CreateServerSocket(int domain, int type, int protocol)
   return server_sckt;
 }
 
+int NameTheSocket(struct sockaddr_un *server_address, int domain, int server_socketfd)
+{
+  server_address->sun_family = domain;
+  int length = sizeof(server_address);
+  return bind(server_socketfd, (const struct sockaddr *)server_address, length);
+}
+
 void RemoveSockets(const char *socket_name)
 {
   unlink(socket_name);
